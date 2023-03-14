@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/btn_check"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:buttonTint="@color/pink"
+            android:layout_height="match_parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Work out 20min"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="today 1:00"
+                android:gravity="start|top"
+                android:textSize="15sp"
+                android:layout_marginBottom="5dp"
+                android:textColor="#758EB7" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <TextView
+            android:id="@+id/tv_priority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:background="@drawable/txt_back"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:padding="5dp"
+            android:text="HIGH"/>
+
+        <ImageView
+            android:id="@+id/btn_more"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_height="match_parent"
+            android:foreground="?selectableItemBackground"
+            android:src="@drawable/baseline_more_vert_24"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+<View
+    android:layout_width="match_parent"
+    android:background="@color/pink"
+    android:layout_height="2dp"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
