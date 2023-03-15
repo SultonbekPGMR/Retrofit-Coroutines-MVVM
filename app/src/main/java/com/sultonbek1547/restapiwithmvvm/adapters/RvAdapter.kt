@@ -1,14 +1,14 @@
 package com.sultonbek1547.restapiwithmvvm.adapters
 
-import android.content.Context
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.sultonbek1547.restapiwithmvvm.databinding.RvItemBinding
 import com.sultonbek1547.restapiwithmvvm.model.MyToDo
 
-class RvAdapter(val context: Context, var list: ArrayList<MyToDo> = ArrayList<MyToDo>()) :
+class RvAdapter(val rvClick: RvClick, var list: ArrayList<MyToDo> = ArrayList<MyToDo>()) :
     RecyclerView.Adapter<RvAdapter.Vh>() {
 
     inner class Vh(private val itemRvBinding: RvItemBinding) :
@@ -20,7 +20,9 @@ class RvAdapter(val context: Context, var list: ArrayList<MyToDo> = ArrayList<My
 //                tvPriority.text = myToDo.matn.substring(5)
 
 
-
+                itemRvBinding.btnMore.setOnClickListener {
+                    rvClick.menuClick(itemRvBinding.btnMore, myToDo,position)
+                }
 
                 itemRvBinding.btnCheck.setOnCheckedChangeListener { p0, p1 ->
                     if (p1) {
@@ -49,5 +51,9 @@ class RvAdapter(val context: Context, var list: ArrayList<MyToDo> = ArrayList<My
 
     override fun getItemCount(): Int = list.size
 
+
+    interface RvClick {
+        fun menuClick(imageView: ImageView, myToDo: MyToDo,position: Int)
+    }
 
 }

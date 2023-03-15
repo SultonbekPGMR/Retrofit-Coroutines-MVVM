@@ -2,9 +2,9 @@ package com.sultonbek1547.restapiwithmvvm.retrofit
 
 import com.sultonbek1547.restapiwithmvvm.model.MyToDo
 import com.sultonbek1547.restapiwithmvvm.model.MyToDoRequest
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import okhttp3.ResponseBody
+import retrofit2.Response
+import retrofit2.http.*
 
 interface ApiService {
     @GET("plan")
@@ -12,6 +12,12 @@ interface ApiService {
 
     @POST("plan/")
     suspend fun addToDo(@Body myToDoRequest: MyToDoRequest): MyToDo
+
+    @PUT("plan/{id}/")
+    suspend fun updateToDo(@Path("id") id: Int, @Body myToDoRequest: MyToDoRequest): MyToDo
+
+    @DELETE("plan/{id}/")
+    suspend fun deleteToDo(@Path("id") id: Int): Response<Int>?
 
 
 }

@@ -10,13 +10,15 @@ data class Resource<out T>(val status: Status, val data: T?, val message: String
         }
 
         fun <T> error(message: String?): Resource<T> {
-            Log.e("TAGGG", "error: ", )
+            Log.e("TAGGG", "error: $message", )
             return Resource(Status.ERROR, null, message)
         }
 
         fun <T> loading(message: String?): Resource<T> {
             return Resource(Status.LOADING, null, message)
         }
-
+        fun <T> successDelete(message: String?): Resource<T> {
+            return Resource(Status.SUCCESS, null, message)
+        }
     }
 }
